@@ -1,45 +1,43 @@
 <html>
-<head>
+  <head>
 	<title>MultiplicationTableForNumber</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
-</head>
+	<meta charset="utf-8">	
+  </head>
 
-<body>
+  <body>
 
-<table border="2">
-	<tr>
+	<table border="2">
+	  <tr>
 		<td colspan="2"><h2>Multiplication Table For Number</h2></td>
-	</tr>
+	  </tr>
 
-	<tr>
+	  <tr>
 		<td width="40%">Enter a Number : </td>
 		<td><input type="number" onchange="printMultiplication(this)"></td>
-	</tr>
-	<tr>
+	  </tr>
+	  <tr>
 		<td colspan="2"><span id="multiplicationTable"></span></td>
-	</tr>
-</table>
+	  </tr>
+	</table>
 
-<script>
-function printMultiplication(num) {
-	var input = num.value;
-	if(!isNaN(input)) //new favorite if statement for javascript so far
-	{  
-		var table = "";
-		var number = "";
-		for(i = 1;i <= 10; i++) 
-		{
-			number = input * i;
-			table +=  input + " * " + i + " = " + number + "<br/>";
+	<script>
+		function printMultiplication(num) {
+		var input = num.value;
+		if(!isNaN(input)) //new favorite if statement for javascript so far
+		{  
+			var table = "";
+			var number = "";
+			for(i = 1;i <= 10; i++) 
+			{
+				number = input * i;
+				table +=  input + " * " + i + " = " + number + "<br/>";
+			}
+			document.getElementById("multiplicationTable").innerHTML = table;
 		}
-		document.getElementById("multiplicationTable").innerHTML = table;
+		else {
+			document.getElementById("multiplicationTable").innerHTML = "Number not Valid";
+		}
 	}
-	else {
-		document.getElementById("multiplicationTable").innerHTML = "Number not Valid";
-	}
-}
-</script>
-</body>
+	</script>
+  </body>
 </html>		
